@@ -1,7 +1,6 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:photo_manager/photo_manager.dart';
-import 'package:vs_media_picker/src/core/decode_image.dart';
 import 'package:vs_media_picker/src/presentation/pages/vs_media_picker_controller.dart';
 
 class ThumbnailWidget extends StatelessWidget {
@@ -55,18 +54,15 @@ class ThumbnailWidget extends StatelessWidget {
 
         /// thumbnail image
         FutureBuilder<Uint8List?>(
-          future: asset.thumbnailData,
+          future: asset.thumbnailDataWithSize(
+              ThumbnailSize(thumbnailQuality, thumbnailQuality)),
           builder: (_, data) {
             if (data.hasData) {
               return SizedBox(
                 width: double.infinity,
                 height: double.infinity,
-                child: Image(
-                  image: DecodeImage(
-                      provider.pathList[
-                          provider.pathList.indexOf(provider.currentAlbum!)],
-                      thumbSize: thumbnailQuality,
-                      index: index),
+                child: Image.memory(
+                  data.data!,
                   gaplessPlayback: true,
                   fit: thumbnailBoxFix,
                   filterQuality: FilterQuality.high,
@@ -90,7 +86,7 @@ class ThumbnailWidget extends StatelessWidget {
                 duration: const Duration(milliseconds: 300),
                 decoration: BoxDecoration(
                   color: picked
-                      ? selectedBackgroundColor.withOpacity(0.3)
+                      ? selectedBackgroundColor.withValues(alpha: 0.3)
                       : Colors.transparent,
                 ),
               );
@@ -115,7 +111,8 @@ class ThumbnailWidget extends StatelessWidget {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: picked
-                            ? selectedCheckBackgroundColor.withOpacity(0.6)
+                            ? selectedCheckBackgroundColor.withValues(
+                                alpha: 0.6)
                             : Colors.transparent,
                         border:
                             Border.all(width: 1.5, color: selectedCheckColor),
@@ -139,7 +136,7 @@ class ThumbnailWidget extends StatelessWidget {
               padding: const EdgeInsets.only(right: 5, bottom: 5),
               child: Container(
                   decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.8),
+                      color: Colors.black.withValues(alpha: 0.8),
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(color: Colors.white, width: 1)),
                   padding:

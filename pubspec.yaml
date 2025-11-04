@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   
-  photo_manager: ^3.6.1
+  photo_manager: ^3.7.1
   oktoast: ^3.4.0
 
 

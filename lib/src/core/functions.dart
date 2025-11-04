@@ -95,6 +95,7 @@ class GalleryFunctions {
       try {
         setState(() {
           provider.resetPathList(pathList);
+          provider.setAssetCount();
         });
       } catch (e) {
         //

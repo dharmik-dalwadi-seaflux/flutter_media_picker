@@ -41,8 +41,7 @@ mixin PhotoDataController on ChangeNotifier {
     int Function(
       AssetPathEntity a,
       AssetPathEntity b,
-    )
-        sortBy = _defaultSort,
+    ) sortBy = _defaultSort,
   }) {
     list.sort(sortBy);
     pathList.clear();
@@ -144,7 +143,7 @@ class VSMediaPickerController extends ChangeNotifier with PhotoDataController {
 
   /// picked path index
   int pickIndex(AssetEntity entity) {
-    return picked.indexOf(entity);
+    return picked.indexWhere((e) => e.id == entity.id);
   }
 
   /// get assets album count

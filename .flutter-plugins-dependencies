@@ -1,1 +1,47 @@
-{"info":"This is a generated file; do not edit or check into version control.","plugins":{"ios":[{"name":"photo_manager","path":"/Users/writco/.pub-cache/hosted/pub.dev/photo_manager-3.6.1/","native_build":true,"dependencies":[]}],"android":[{"name":"photo_manager","path":"/Users/writco/.pub-cache/hosted/pub.dev/photo_manager-3.6.1/","native_build":true,"dependencies":[]}],"macos":[{"name":"photo_manager","path":"/Users/writco/.pub-cache/hosted/pub.dev/photo_manager-3.6.1/","native_build":true,"dependencies":[]}],"linux":[],"windows":[],"web":[]},"dependencyGraph":[{"name":"photo_manager","dependencies":[]}],"date_created":"2024-11-09 13:11:27.762634","version":"3.24.4","swift_package_manager_enabled":false}
+{
+  "info": "This is a generated file; do not edit or check into version control.",
+  "plugins": {
+    "ios": [
+      {
+        "name": "photo_manager",
+        "path": "/Users/dharmik.dalwadi/.pub-cache/hosted/pub.dev/photo_manager-3.7.1/",
+        "native_build": true,
+        "dependencies": [],
+        "dev_dependency": false
+      }
+    ],
+    "android": [
+      {
+        "name": "photo_manager",
+        "path": "/Users/dharmik.dalwadi/.pub-cache/hosted/pub.dev/photo_manager-3.7.1/",
+        "native_build": true,
+        "dependencies": [],
+        "dev_dependency": false
+      }
+    ],
+    "macos": [
+      {
+        "name": "photo_manager",
+        "path": "/Users/dharmik.dalwadi/.pub-cache/hosted/pub.dev/photo_manager-3.7.1/",
+        "native_build": true,
+        "dependencies": [],
+        "dev_dependency": false
+      }
+    ],
+    "linux": [],
+    "windows": [],
+    "web": []
+  },
+  "dependencyGraph": [
+    {
+      "name": "photo_manager",
+      "dependencies": []
+    }
+  ],
+  "date_created": "2025-11-04 16:50:52.483639",
+  "version": "3.35.5",
+  "swift_package_manager_enabled": {
+    "ios": false,
+    "macos": false
+  }
+}

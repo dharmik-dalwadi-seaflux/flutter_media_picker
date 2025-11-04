@@ -92,6 +92,12 @@ class GalleryGridViewState extends State<GalleryGridView> {
   @override
   void initState() {
     super.initState();
+    widget.provider.assetCountNotifier.addListener(() {
+      cacheMap.clear();
+      if (mounted) {
+        setState(() {});
+      }
+    });
   }
 
   @override
