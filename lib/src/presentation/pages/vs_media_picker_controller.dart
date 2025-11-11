@@ -143,7 +143,7 @@ class VSMediaPickerController extends ChangeNotifier with PhotoDataController {
 
   /// picked path index
   int pickIndex(AssetEntity entity) {
-    return picked.indexWhere((e) => e.id == entity.id);
+    return picked.indexOf(entity);
   }
 
   /// get assets album count

@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:photo_manager/photo_manager.dart';
+import 'package:vs_media_picker/src/core/decode_image.dart';
 import 'package:vs_media_picker/src/presentation/pages/vs_media_picker_controller.dart';
 
 class ThumbnailWidget extends StatelessWidget {
@@ -54,15 +55,18 @@ class ThumbnailWidget extends StatelessWidget {
 
         /// thumbnail image
         FutureBuilder<Uint8List?>(
-          future: asset.thumbnailDataWithSize(
-              ThumbnailSize(thumbnailQuality, thumbnailQuality)),
+          future: asset.thumbnailData,
           builder: (_, data) {
             if (data.hasData) {
               return SizedBox(
                 width: double.infinity,
                 height: double.infinity,
-                child: Image.memory(
-                  data.data!,
+                child: Image(
+                  image: DecodeImage(
+                      provider.pathList[
+                          provider.pathList.indexOf(provider.currentAlbum!)],
+                      thumbSize: thumbnailQuality,
+                      index: index),
                   gaplessPlayback: true,
                   fit: thumbnailBoxFix,
                   filterQuality: FilterQuality.high,
